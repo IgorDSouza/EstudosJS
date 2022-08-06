@@ -1,0 +1,13 @@
+.pokedex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.grass{
+    background-color: rgba(86, 243, 86, 0.774);
+}
+li{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
