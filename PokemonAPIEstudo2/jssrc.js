@@ -1,15 +1,29 @@
 
-const fetchPokemon= () => {
+const pickPokemon= () =>{
+    const id = document.querySelector('[name="fname"').value
+
+     fetchPokemon(id)
+
+
+}
+    
+
+const fetchPokemon= (id) => {
 
     const getUrl = id => `https://pokeapi.co/api/v2/pokemon/${id}` // const recebe id como parametro
     
     const pokemonPromises=[]
     
-        for (let i=1; i<=150; i++){
-        pokemonPromises.push(fetch(getUrl(i)) .then( response => response.json()))
     
-         //faz a request com o fetch e transforma o resultado em json para melhor manipulação// a cada loop do for, a função recebe um id novo, traz um pokemon diferente e adiciona ao fim da array pokepromise
+      
+        pokemonPromises.push(fetch(getUrl(id)) .then( response =>{
+
+            if(!response.ok){
+            throw new Error(`http error, status parametro invalido`)
         }
+        return  response.json()
+    }))
+    
         Promise.all(pokemonPromises) //recebe o array de promisse e quando todas elas forem recebidas, retornara uma promise podendo usar o then    
         .then( pokemons =>{
     
@@ -26,24 +40,14 @@ const fetchPokemon= () => {
                 return accumulator // o acumulator verifica cada pokemon que foi passado pelo parametro, trata como o html acima e concatena, tornando uma grande string de pokemons
                 
             },'') 
+            console.log(lisPokemons)
+            const ol = document.querySelector('[data-js="pokedex"]')
 
-            const array = []
-            for(let i=1 ; i<=150 ; i++){
-                
-            }
- 
-    
+            ol.innerHTML =lisPokemons   
         })
     
     }
     
-    fetchPokemon()
 
-const pickPokemon(id){
-    const ol = document.querySelector('[data-js="pokedex"]')
-
-    const poke = lisPokemon
-    
-}
     
     
