@@ -1,13 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+*{
+    font-family: 'Silkscreen', cursive;
+}
+html{
+    height: 100%;
+    width: 100%;
+}
+body{
+    height: 100%;
+    margin: 0px;
+    background-image: url('bgPokemon.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pokedexHand{
+   /* display: flex;
+    justify-content: center;
+    align-items: end;
+    position: relative; */
+    background-image: url('pokedex1.png');
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-areas: 'box0 box1 box3 box4 box5' 'box0 box2 box3 box4 box5';
+    animation: animate 3s ease;
+    width: 600px;
+    height: 500px;
+    align-items: center;
+  
+}@keyframes animate {
+
+    0%{
+        transform: translateY(300px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+
+
+}
+.box0{
+    width: 46px;
+    grid-column: box0;
+}
+.box3{
+    grid-area: box3;
+    grid-row-start: box3;
+    grid-row-end: box3;
+    grid-row: box3;
+    width: 61px;
+}
+.pokeInfo{
+    grid-area: box4;
+    text-align: center;
+    grid-row: box4;
+    height: 257px;
+    width: 177px;
+}
+.box5{
+    grid-area: box5;
+    grid-row: box5;
+    width: 89px;
+}
+ .pokemonData{
+    grid-area: box1;
+    width: 200px;
+    height: 146px;
+    margin-top: -4%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+ .pokemonData img{
+    margin: 0px;
+    width: 15vw;
+ }
+ .pokemonSrc{
+    grid-area: box2;
+    height: 150px;
+    width: 209px;
+    margin-left: -2%;
+    text-align: center;
+    margin-top: -78%;
+ }
+ .pokemonSrc input{
+    width: 43%;
+    text-align: center;
+ }
 .pokedex{
     display: flex;
     flex-wrap: wrap;
+    margin: 0px;
 }
 .grass{
     background-color: rgba(86, 243, 86, 0.774);
+}
+ol{
+     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 li{
     text-align: center;
     display: flex;
     flex-direction: column;
-    margin: 10px;
 }
+

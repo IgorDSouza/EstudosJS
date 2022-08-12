@@ -7,18 +7,27 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<body>
-        Digite o ID ou o Nome do Pokemon 
-        <input type="text" name="fname">
-        <button onclick="pickPokemon()"> Pesquisar</button> 
-      
-    <div> 
-         <ul data-js="pokedex" class="pokedex" id="lista">
-
-        </ul>
-
-    </div>
-  
+<body>  
+    <div class="pokedexHand">            
+    
+        <div class="box0"></div>
+                
+        <div class="box5"></div>
+        
+        <div class="box3"></div>
+        
+        <div class="pokeInfo"><ol data-js='pokedex'></ol></div>
+        
+        <div class="pokemonData" data-js="pokeimg"></div>
+            
+        <div class="pokemonSrc">
+            <p>Pokedex Classic</p>
+            <p>Insira o nome ou numero do Pokémon</p>
+            <input type="text" name="fname">
+            <button onclick="pickPokemon()"> Pesquisar</button>
+        </div>
+    </div>  
     <script src="jssrc.js"></script>
+
 </body>
 </html>
