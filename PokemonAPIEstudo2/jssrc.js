@@ -2,13 +2,7 @@
 const pickPokemon= () =>{
     const id = document.querySelector('[name="fname"]').value
 
-    if( id == '' ){
-
-        window.alert("Nome ou ID inválido")
-
-    } else{
        fetchPokemon(id) 
-    }
 
 }
 
@@ -24,7 +18,10 @@ const fetchPokemon= (id) => {
         pokemonPromises.push(fetch(getUrl(id)) .then( response =>{
 
             if(!response.ok){
-            throw new Error(`http error, status parametro invalido`)
+
+                window.alert("Nome ou ID inválido")
+
+            throw new Error (`http error, status parametro invalido`) 
         }
         return  response.json()
     }))

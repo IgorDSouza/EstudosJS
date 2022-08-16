@@ -23,6 +23,7 @@ body{
     position: relative; */
     background-image: url('pokedex1.png');
     background-repeat: no-repeat;
+    background-size: contain;
     display: grid;
     grid-template-areas: 'box0 box1 box3 box4 box5' 'box0 box2 box3 box4 box5';
     animation: animate 3s ease;
@@ -42,7 +43,7 @@ body{
 
 }
 .box0{
-    width: 46px;
+    width: 60px;
     grid-column: box0;
 }
 .box3{
@@ -50,7 +51,7 @@ body{
     grid-row-start: box3;
     grid-row-end: box3;
     grid-row: box3;
-    width: 61px;
+    width: 79px;
 }
 .pokeInfo{
     grid-area: box4;
@@ -75,7 +76,7 @@ body{
   }
  .pokemonData img{
     margin: 0px;
-    width: 15vw;
+    width: 200px;
  }
  .pokemonSrc{
     grid-area: box2;
@@ -108,3 +109,46 @@ li{
     flex-direction: column;
 }
 
+
+ @media (min-width:513px) and (max-width:615px) {
+  
+    .pokedexHand{
+        width: 97vw;
+        height: 81vw;
+    }
+    .box0 {
+        width: 10vw;
+    }
+    .box3 {
+
+        width: 12vw;
+    }
+    .box5 {
+
+        width: 54vw;
+    }
+    .pokeInfo {
+        height: 257px;
+        width: 29vw;
+    }
+    .pokemonData {
+        width: 32vw;
+        height: 146px;
+        margin-top: -4%;
+
+    }
+    .pokemonSrc {
+        height: 150px;
+        width: 34vw;
+        margin-left: -2%;
+        margin-top: -78%;
+    }
+} 
+@media (min-width:377px) and (max-width:510px){
+    .pokemonSrc {
+        margin-top: -61%;
+    }
+    .pokeInfo{
+        padding-top: 72px;
+    }
+}
