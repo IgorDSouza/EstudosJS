@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 *{
     font-family: 'Silkscreen', cursive;
+    font-size: clamp(5px,2.7vw,16px) !important;
+    
 }
+
 html{
     height: 100%;
     width: 100%;
@@ -69,14 +72,14 @@ body{
     grid-area: box1;
     width: 200px;
     height: 146px;
-    margin-top: -4%;
+    margin-top: 12%;
     justify-content: center;
     align-items: center;
     display: flex;
   }
  .pokemonData img{
     margin: 0px;
-    width: 200px;
+    width: 180px;
  }
  .pokemonSrc{
     grid-area: box2;
@@ -84,19 +87,16 @@ body{
     width: 209px;
     margin-left: -2%;
     text-align: center;
-    margin-top: -78%;
+    margin-top: -40%;
  }
  .pokemonSrc input{
-    width: 43%;
+    width: 69%;
     text-align: center;
  }
 .pokedex{
     display: flex;
     flex-wrap: wrap;
     margin: 0px;
-}
-.grass{
-    background-color: rgba(86, 243, 86, 0.774);
 }
 ol{
      width: 100%;
@@ -108,7 +108,10 @@ li{
     display: flex;
     flex-direction: column;
 }
-
+p{
+    margin:0px;
+    
+}
 
  @media (min-width:513px) and (max-width:615px) {
   
@@ -116,6 +119,10 @@ li{
         width: 97vw;
         height: 81vw;
     }
+     .pokedexHand img {
+         width: 27vw;
+             
+     }
     .box0 {
         width: 10vw;
     }
@@ -134,21 +141,52 @@ li{
     .pokemonData {
         width: 32vw;
         height: 146px;
-        margin-top: -4%;
+        margin-top: 10%;
 
     }
     .pokemonSrc {
         height: 150px;
         width: 34vw;
         margin-left: -2%;
-        margin-top: -78%;
     }
 } 
-@media (min-width:377px) and (max-width:510px){
-    .pokemonSrc {
-        margin-top: -61%;
+@media (min-width:360px) and (max-width:512px){
+    .pokedexHand{
+        width: 97vw;
+        height: 81vw;
     }
-    .pokeInfo{
+    .pokedexHand img {
+         width: 27vw;
+             
+     }
+    .box0 {
+        width: 10vw;
+    }
+    .box3 {
+
+        width: 12vw;
+    }
+    .box5 {
+
+        width: 54vw;
+    }
+    .pokeInfo {
+        height: 257px;
+        width: 29vw;
         padding-top: 72px;
+
     }
+    .pokemonData {
+        width: 32vw;
+        height: 146px;
+        margin-top: 15%;
+
+    }
+    .pokemonSrc {
+        height: 150px;
+        width: 34vw;
+        margin-left: -2%;
+        margin-top: -13%;
+    }
+   
 }

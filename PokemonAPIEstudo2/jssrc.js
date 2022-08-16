@@ -19,7 +19,7 @@ const fetchPokemon= (id) => {
 
             if(!response.ok){
 
-                window.alert("Nome ou ID inválido")
+                window.alert("Nome ou Numero do Pokemon inexistente" )
 
             throw new Error (`http error, status parametro invalido`) 
         }
@@ -38,9 +38,11 @@ const fetchPokemon= (id) => {
                 <li id="${pokemon.name}" >
 
                 <h3></br>${pokemon.id}.${pokemon.name}</h3>
-                <p> Type: </br>
-                ${types.join(' | ')}</p>   
-                <p> Abilities: </br>
+
+                <p> </br> Type: </br>
+                ${types.join(' | ')}</p>  
+                 
+                 <p></br>  Abilities: </br>
                 ${abilities.join(' | ')} </p>
                 </li>`
                 return accumulator // o acumulator verifica cada pokemon que foi passado pelo parametro, trata como o html acima e concatena, tornando uma grande string de pokemons
