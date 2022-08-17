@@ -12,7 +12,7 @@ html{
 body{
     height: 100%;
     margin: 0px;
-    background-image: url('bgPokemon.jpeg');
+    background-image: url('../img/bgPokemon.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -24,7 +24,7 @@ body{
     justify-content: center;
     align-items: end;
     position: relative; */
-    background-image: url('pokedex1.png');
+    background-image: url('../img/pokedex1.png');
     background-repeat: no-repeat;
     background-size: contain;
     display: grid;
@@ -49,7 +49,7 @@ body{
     width: 60px;
     grid-column: box0;
 }
-.box3{
+.box1{
     grid-area: box3;
     grid-row-start: box3;
     grid-row-end: box3;
@@ -63,7 +63,7 @@ body{
     height: 257px;
     width: 177px;
 }
-.box5{
+.box2{
     grid-area: box5;
     grid-row: box5;
     width: 89px;
