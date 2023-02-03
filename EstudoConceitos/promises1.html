@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* SINGLE THREAD - Carrega o codigo linha por linha
+        
+        IO não bloqueante - Mesmo fazendo requisições que demoram, ele não bloqueia o JS enquanto o a requisição esta sendo processada. É tudo feito em segundo plano
+
+        As promisses podem se encontrar em 4 estados:
+        PENDENTE - Acaba de fazer a requisição;
+        REALIZADA- A requisição foi um sucesso;
+        REJEITADO- A requisição foi rejeitada;
+        ESTABELECIDO - Sucesso e realizada;
+
+        EX:
+        */
+       function jaRealizada(){
+        return Promise.resolve(/* pode ser passado parametro aqui*/)
+
+       } /* função que retorna promisse resolvida(realizada)
+       
+       As promisses tem metodos diferentes ao ser realizadas ou rejeitadas
+       
+       Ex realizada:
+       apos ela ser resolvida, fara o conteudo do then*/
+       jaRealizada().then( function(){
+        console.log('promise resolvida')
+       })
+
+       /*Ex rejeitada:
+       apos ela ser rejeitada, fara o conteudo do catch*/
+
+       function jaRejeitada(){
+        return Promise.reject(/* pode ser passado parametro aqui*/)
+        
+        } /* função que retorna promisse rejeitada*/
+
+       jaRejeitada().catch( function(){
+        console.log('promise rejeitada')
+       })
+
+       //Maneira mais trabalhada e usada para utilizar promisses
+
+       function promiseTrabalhada(){
+        return new Promise(function (resolve,reject){
+            resolve('olá mundo');
+        })
+       }
+promiseTrabalhada().then(function(message){
+    console.log(message); // só é invocada com .then se a função for resolvida
+})
+// se for o caso de reject
+promiseTrabalhada().catch(function(message){
+    console.log(message); // só é invocada com .catch se a função for rejeitada
+})
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

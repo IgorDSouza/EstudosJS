@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            display: flex;
+            align-content: center;
+            justify-content: center;
+        }
+    </style>
+    <title>Busca Cep</title>
+
+</head>
+<body>
+    <div class="form">
+        <h1>Digite seu CEP</h1>
+        <input type="text" name="Cep" id="CEP">
+        <button onclick="cep()">Pesquisar</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+    function cep(){
+        const CEP = document.querySelector('[id="CEP"]').value;
+        const result = document.getElementById('result') ;
+        window.fetch(`https://viacep.com.br/ws/${CEP}/json/`)
+            .then(function(data/*= Valor adquirido do fetch*/){
+                return data.json();
+            })
+            .then(function(endereco/*= Valor adquirido do data.json()*/){
+                result.innerHTML=
+                `
+                <h2>Seu endereço</h2>
+                <ol>
+                    <li>Logradouro = ${endereco.logradouro} </li> 
+                    <li>Bairro = ${endereco.bairro} </li> 
+                    <li>Complemento = ${endereco.complemento} </li> 
+                    <li>Localidade = ${endereco.localidade} </li>
+                 </ol>  `
+            })}
+        
+    </script>
+</body>
+</html>
